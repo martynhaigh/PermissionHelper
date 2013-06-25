@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         public void onServiceDisconnected(ComponentName name) {
             // TODO Auto-generated method stub
             mService = null;
-            Log.d("IRemote", "Binding - Service disconnected");
+            Log.d("ISmsProvider", "Binding - Service disconnected");
         }
 
         @Override
@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
             } catch (RemoteException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
-            Log.d("IRemote", "Binding is done - Service connected");
+            Log.d("ISmsProvider", "Binding is done - Service connected");
         }
     };
 
