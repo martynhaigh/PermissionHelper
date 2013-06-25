@@ -89,7 +89,6 @@ public class MainActivity extends Activity {
                         view.setText(view.getText() + data.getBody());
                     }
 
-                    //Toast.makeText(MainActivity.this.getBaseContext(), "Sms Data Received: " + (((SmsData)msg.obj).getText()), Toast.LENGTH_LONG).show();
                     break;
                 default:
                     super.handleMessage(msg);
