@@ -8,7 +8,6 @@ import android.content.ServiceConnection;
 import android.os.*;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.martynhaigh.sms.lib.ISmsConsumer;
 import com.martynhaigh.sms.lib.ISmsProvider;
 import com.martynhaigh.sms.lib.SmsData;
@@ -60,7 +59,7 @@ public class MainActivity extends Activity {
             try {
                 mService.getSmsDetails(mCallback);
             } catch (RemoteException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                e.printStackTrace();
             }
             Log.d("MH", "ISmsProvider Binding is done - Service connected");
         }
