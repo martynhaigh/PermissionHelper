@@ -21,11 +21,13 @@ public class MainActivity extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d("MH", "Consumer started");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         if (mService == null) {
             Intent it = new Intent();
             it.setAction("com.martynhaigh.permission.service.SMS");
+
             //binding to remote service
             bindService(it, mServiceConnection, Service.BIND_AUTO_CREATE);
         }
@@ -48,7 +50,7 @@ public class MainActivity extends Activity {
         public void onServiceDisconnected(ComponentName name) {
             // TODO Auto-generated method stub
             mService = null;
-            Log.d("ISmsProvider", "Binding - Service disconnected");
+            Log.d("MH", "ISmsProvider Binding - Service disconnected");
         }
 
         @Override
@@ -60,7 +62,7 @@ public class MainActivity extends Activity {
             } catch (RemoteException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
-            Log.d("ISmsProvider", "Binding is done - Service connected");
+            Log.d("MH", "ISmsProvider Binding is done - Service connected");
         }
     };
 
